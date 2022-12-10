@@ -7,6 +7,7 @@ use App\Models\Creneau;
 use App\Models\Document;
 use App\Models\Registration;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class RegistrationController extends Controller
 {
@@ -36,6 +37,10 @@ return view('registrations')->with('groupes',$groupes)->with('registrations',$re
    */
   public function search(Request $request)
   {
+
+
+    if(App::environment('production')){
+ 
       $req =$request->input('request');
        $registrations =Registration::where('nom', 'ILIKE', "%{$req}%")
        ->orWhere('prenom', 'ILIKE', "%{$req}%")
@@ -44,7 +49,18 @@ return view('registrations')->with('groupes',$groupes)->with('registrations',$re
 
       return view('search', [
           'registrations' => $registrations
-      ]);
+      ]);}
+      else {
+        $req =$request->input('request');
+        $registrations =Registration::where('nom', 'LIKE', "%{$req}%")
+        ->orWhere('prenom', 'LIKE', "%{$req}%")
+             ->orderBy('created_at', 'desc')
+             ->get();
+ 
+       return view('search', [
+           'registrations' => $registrations
+       ]);
+      }
   }
 
   public function registration1()
