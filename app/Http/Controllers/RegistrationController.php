@@ -37,8 +37,8 @@ return view('registrations')->with('groupes',$groupes)->with('registrations',$re
   public function search(Request $request)
   {
       $req =$request->input('request');
-       $registrations =Registration::where('nom', 'LIKE', "%{$req}%")
-       ->orWhere('prenom', 'LIKE', "%{$req}%")
+       $registrations =Registration::where('nom', 'ILIKE', "%{$req}%")
+       ->orWhere('prenom', 'ILIKE', "%{$req}%")
             ->orderBy('created_at', 'desc')
             ->get();
 
