@@ -27,12 +27,12 @@
         "VIEW_COMPILED_PATH": "/tmp/views",
         "SSR_TEMP_PATH": "/tmp/ssr",
         "NODE_PATH": "node"
-        "DB_CONNECTION=mysql"
-        "DB_HOST=us-east.connect.psdb.cloud"
-        "DB_PORT=3306"
-        "DB_DATABASE=cvs"
-        "DB_USERNAME=7pp98kqattpsw7olbcy9"
-        "DB_PASSWORD=pscale_pw_8AIOHTLxBQbcxBFIqCzbTaxsMuj2qzIP9mvrZoP7Ppu"
-        "MYSQL_ATTR_SSL_CA=/etc/ssl/certs/ca-certificates."
+        "DB_CONNECTION":"mysql"
+        "DB_HOST":"us-east.connect.psdb.cloud"
+        "DB_PORT":"3306"
+        "DB_DATABASE":"cvs"
+        "DB_USERNAME":"7pp98kqattpsw7olbcy9"
+        "DB_PASSWORD":"pscale_pw_8AIOHTLxBQbcxBFIqCzbTaxsMuj2qzIP9mvrZoP7Ppu"
+        "MYSQL_ATTR_SSL_CA":"/etc/ssl/certs/ca-certificates."
     }
 }
